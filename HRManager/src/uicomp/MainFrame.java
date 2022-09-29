@@ -4,6 +4,9 @@
  */
 package uicomp;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+import static javax.swing.JFileChooser.APPROVE_OPTION;
 import model.EmployeeHistory;
 import model.ManagerVar;
 
@@ -42,16 +45,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
-        lblHeadingMainFrame = new javax.swing.JLabel();
-        lblFilter = new javax.swing.JLabel();
-        lblFName = new javax.swing.JLabel();
-        lblFEmpID = new javax.swing.JLabel();
-        lblFCellNum = new javax.swing.JLabel();
-        lblFEmail = new javax.swing.JLabel();
-        txtFName = new javax.swing.JTextField();
-        txtFCell = new javax.swing.JTextField();
-        txtFEmpID = new javax.swing.JTextField();
-        txtFEmail = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,7 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnView)
                     .addComponent(btnCreate))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,89 +80,32 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(btnCreate)
                 .addGap(18, 18, 18)
                 .addComponent(btnView)
-                .addContainerGap(577, Short.MAX_VALUE))
+                .addContainerGap(589, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
 
-        workArea.setPreferredSize(new java.awt.Dimension(800, 800));
+        workArea.setBackground(new java.awt.Color(204, 255, 255));
 
-        lblHeadingMainFrame.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lblHeadingMainFrame.setText("HR MANAGEMENT TOOL");
-
-        lblFilter.setText("Choose Filter :");
-
-        lblFName.setText("Name");
-
-        lblFEmpID.setText("Employee ID");
-
-        lblFCellNum.setText("Cell Number");
-
-        lblFEmail.setText("Email");
-
-        txtFEmpID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFEmpIDActionPerformed(evt);
-            }
-        });
-
-        txtFEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFEmailActionPerformed(evt);
-            }
-        });
+        jLabel1.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("HR MANAGER TOOL");
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(lblHeadingMainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblFCellNum, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(workAreaLayout.createSequentialGroup()
-                                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblFName, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblFEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtFName)
-                                    .addComponent(txtFCell)
-                                    .addComponent(txtFEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtFEmpID))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(134, 134, 134)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(482, Short.MAX_VALUE))
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lblHeadingMainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(lblFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFName)
-                    .addComponent(txtFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFEmpID)
-                    .addComponent(txtFEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFCellNum)
-                    .addComponent(txtFCell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFEmail)
-                    .addComponent(txtFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(182, 182, 182)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(582, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);
@@ -177,42 +114,32 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(splitPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
+                .addComponent(splitPane)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
-        
-        CreateJPanel createPanel = new CreateJPanel(history);
-        //creating pane
-        splitPane.setRightComponent(createPanel);
-    }//GEN-LAST:event_btnCreateActionPerformed
-
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        
+
         ViewJPanel viewPanel = new ViewJPanel(history);
         splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
-    private void txtFEmpIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFEmpIDActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFEmpIDActionPerformed
 
-    private void txtFEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFEmailActionPerformed
+        CreateJPanel createPanel = new CreateJPanel(history);
+        //creating pane
+        splitPane.setRightComponent(createPanel);
+    }//GEN-LAST:event_btnCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,17 +180,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JLabel lblFCellNum;
-    private javax.swing.JLabel lblFEmail;
-    private javax.swing.JLabel lblFEmpID;
-    private javax.swing.JLabel lblFName;
-    private javax.swing.JLabel lblFilter;
-    private javax.swing.JLabel lblHeadingMainFrame;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JTextField txtFCell;
-    private javax.swing.JTextField txtFEmail;
-    private javax.swing.JTextField txtFEmpID;
-    private javax.swing.JTextField txtFName;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }

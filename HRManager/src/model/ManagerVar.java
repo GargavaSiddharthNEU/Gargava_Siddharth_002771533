@@ -4,6 +4,9 @@
  */
 package model;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author siddh
@@ -19,6 +22,7 @@ public class ManagerVar {
     private String level;
     private String cellNum;
     private String email;
+    private JLabel image;
 
     public String getName() {
         return name;
@@ -99,11 +103,20 @@ public class ManagerVar {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public JLabel getImage() {
+        return image;
+    }
+
+    public void setImage(JLabel image) {
+        this.image = image;
+    }
+    
+    
     
     @Override
     public String toString(){
         return name;
     }
-    
     
 }
