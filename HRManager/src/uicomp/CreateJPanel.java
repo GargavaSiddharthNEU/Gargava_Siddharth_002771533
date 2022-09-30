@@ -101,13 +101,14 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setText("ADD");
+        btnAdd.setText("ADD Record");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("CREATE RECORD");
 
         txtStartDate.addActionListener(new java.awt.event.ActionListener() {
@@ -175,9 +176,6 @@ public class CreateJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(32, 32, 32)
@@ -227,14 +225,18 @@ public class CreateJPanel extends javax.swing.JPanel {
                                             .addComponent(jLabel8)
                                             .addGap(18, 18, 18)
                                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(442, Short.MAX_VALUE))
+                                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,12 +274,11 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGap(117, 117, 117)
                         .addComponent(btnAdd))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(btnBrowse))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(295, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnBrowse)
+                            .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -300,55 +301,6 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         
-        //START
-//        String name = txtName.getText();
-//        String empID = txtEmpID.getText();
-//        Integer age = validateAge(txtAge.getText());
-//        String position = txtPosition.getText();
-//        String startDate = txtStartDate.getText();
-//        String level = txtLevel.getText();
-//        String teamInfo = txtTeamInfo.getText();
-//        String gender = txtGender.getText();
-//        Long cellNum = validatePhoneNumber(txtCell.getText());
-//        String email = txtEmail.getText();
-//        
-//        if(name.isEmpty() || empID.isEmpty() || validateAge(txtAge.getText()) == null || position.isEmpty() || startDate.isEmpty() ||
-//                level.isEmpty() || teamInfo.isEmpty() || gender.isEmpty() ||
-//                validatePhoneNumber(txtCell.getText()) == null
-//                || email.isEmpty()){
-//            JOptionPane.showMessageDialog(this, "Please check if information is filled correctly");
-//        } else {
-//        
-//        ManagerVar mv = history.addEmployeeDetails();
-//        
-//        mv.setName(name);
-//        mv.setEmpID(empID);
-//        mv.setAge(age);
-//        mv.setPosition(position);
-//        mv.setStartDate(startDate);
-//        mv.setLevel(level);
-//        mv.setTeamInfo(teamInfo);
-//        mv.setGender(gender);
-//        mv.setCellNum(cellNum);
-//        mv.setEmail(email);
-//        mv.setImage(lblImage.getIcon());
-//        
-//        
-//        JOptionPane.showMessageDialog(this, "Employee added");
-//        
-//        txtName.setText("");
-//        txtEmpID.setText("");
-//        txtAge.setText("");
-//        txtPosition.setText("");
-//        txtStartDate.setText("");
-//        txtLevel.setText("");
-//        txtTeamInfo.setText("");
-//        txtGender.setText("");
-//        txtCell.setText("");
-//        txtEmail.setText("");
-//        lblImage.setIcon(null);
-//        }
-//END
        String name="";
        String empID="";
        Integer age=0;

@@ -96,7 +96,7 @@ public class MainFrame extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(204, 255, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Please Note:\n\nData Validation are as follows:\n1) Phone Number should be of only 10 digits\n2) Date should be only numeric value");
+        jTextArea1.setText("Please Note:\n\nA. CRUD Operations are being done as follows:\n   1) Create - In the Create Record Frame (after clicking on ADD in MainFrame), type in the record details, upload image\n                     and click on ADD Record\n   2) Read -   In the View Record Frame (after clicking on VIEW in MainFrame), choose a tabular row and click Button VIEW Record\n   2) Update - In the View Record Frame (after clicking on VIEW in MainFrame), \n                       choose a tabular row, click button VIEW Record, update any of the displayed record details in the View textfields, and\n                       Click UPDATE Record\n   4) Delete - In the View Record Frame (after clicking on VIEW in MainFrame), choose a tabular row and click DELETE Record\n\nB. Search for record happens on the basis of options - Name, Employee ID. For search feature:\n    1) Visit the View Record Frame (clicking on VIEW in MainFrame), at the bottom of the table - search process is present.\n    2) Choose any of the value [Name, Employee ID] from ComboBox \"Choose Filtering Criterion\"\n    3) Based on the selection, type in relevant Name/Employee ID in Field \"Type to Search\"\n    4) Click on SEARCH button to filter\n\nC. Photo will be displayed in the View Record Frame, based on the Photo uploaded in Create Record\n  \nD. Data Validation are as follows while creating a new record:\n    1) Phone Number should be of only 10 digits \n    2) Age should be only numeric value");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
@@ -106,21 +106,21 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(workAreaLayout.createSequentialGroup()
                 .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(158, 158, 158)
+                        .addGap(281, 281, 281)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(458, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(336, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);

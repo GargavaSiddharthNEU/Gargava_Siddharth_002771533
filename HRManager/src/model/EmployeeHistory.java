@@ -26,6 +26,12 @@ public class EmployeeHistory {
         this.history = history;
     }
     
+    public ManagerVar getHistoryValues(int index){
+        ManagerVar newEmployee = new ManagerVar();
+        newEmployee = history.get(index);
+        return newEmployee;
+    }
+    
     public ManagerVar addEmployeeDetails(){
         ManagerVar newEmployee = new ManagerVar();
         history.add(newEmployee);
