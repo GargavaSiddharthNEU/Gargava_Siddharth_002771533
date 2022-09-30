@@ -4,6 +4,7 @@
  */
 package model;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -20,9 +21,9 @@ public class ManagerVar {
     private String teamInfo;
     private String startDate;
     private String level;
-    private String cellNum;
+    private Long cellNum;
     private String email;
-    private JLabel image;
+    private Icon image;
 
     public String getName() {
         return name;
@@ -88,11 +89,11 @@ public class ManagerVar {
         this.level = level;
     }
 
-    public String getCellNum() {
+    public Long getCellNum() {
         return cellNum;
     }
 
-    public void setCellNum(String cellNum) {
+    public void setCellNum(Long cellNum) {
         this.cellNum = cellNum;
     }
 
@@ -104,13 +105,14 @@ public class ManagerVar {
         this.email = email;
     }
 
-    public JLabel getImage() {
+    public Icon getImage() {
         return image;
     }
 
-    public void setImage(JLabel image) {
+    public void setImage(Icon image) {
         this.image = image;
     }
+    
     
     
     

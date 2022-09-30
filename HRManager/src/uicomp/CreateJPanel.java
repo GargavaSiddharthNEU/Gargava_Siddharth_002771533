@@ -300,28 +300,141 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         
+        //START
+//        String name = txtName.getText();
+//        String empID = txtEmpID.getText();
+//        Integer age = validateAge(txtAge.getText());
+//        String position = txtPosition.getText();
+//        String startDate = txtStartDate.getText();
+//        String level = txtLevel.getText();
+//        String teamInfo = txtTeamInfo.getText();
+//        String gender = txtGender.getText();
+//        Long cellNum = validatePhoneNumber(txtCell.getText());
+//        String email = txtEmail.getText();
+//        
+//        if(name.isEmpty() || empID.isEmpty() || validateAge(txtAge.getText()) == null || position.isEmpty() || startDate.isEmpty() ||
+//                level.isEmpty() || teamInfo.isEmpty() || gender.isEmpty() ||
+//                validatePhoneNumber(txtCell.getText()) == null
+//                || email.isEmpty()){
+//            JOptionPane.showMessageDialog(this, "Please check if information is filled correctly");
+//        } else {
+//        
+//        ManagerVar mv = history.addEmployeeDetails();
+//        
+//        mv.setName(name);
+//        mv.setEmpID(empID);
+//        mv.setAge(age);
+//        mv.setPosition(position);
+//        mv.setStartDate(startDate);
+//        mv.setLevel(level);
+//        mv.setTeamInfo(teamInfo);
+//        mv.setGender(gender);
+//        mv.setCellNum(cellNum);
+//        mv.setEmail(email);
+//        mv.setImage(lblImage.getIcon());
+//        
+//        
+//        JOptionPane.showMessageDialog(this, "Employee added");
+//        
+//        txtName.setText("");
+//        txtEmpID.setText("");
+//        txtAge.setText("");
+//        txtPosition.setText("");
+//        txtStartDate.setText("");
+//        txtLevel.setText("");
+//        txtTeamInfo.setText("");
+//        txtGender.setText("");
+//        txtCell.setText("");
+//        txtEmail.setText("");
+//        lblImage.setIcon(null);
+//        }
+//END
+       String name="";
+       String empID="";
+       Integer age=0;
+       String position="";
+       String startDate="";
+       String level="";
+       String teamInfo="";
+       String gender="";
+       Long cellNum=0L;
+       String email="";
+       Boolean flag = true;
+       //name
+        if(txtName.getText().isEmpty() || txtName.getText().isBlank()){
+            flag = false;
+        } else { 
+            name = txtName.getText();
+        }
         
-        String name = txtName.getText();
-        String empID = txtEmpID.getText();
-        int age = Integer.parseInt(txtAge.getText());
-        String position = txtPosition.getText();
-        String startDate = txtStartDate.getText();
-        String level = txtLevel.getText();
-        String teamInfo = txtTeamInfo.getText();
-        String gender = txtGender.getText();
-        String cellNum = txtCell.getText();
-        String email = txtEmail.getText();
-        String selectedImagePath = "";
+        //empID
+        if(txtEmpID.getText().isEmpty() || txtEmpID.getText().isBlank()){
+            flag = false;
+        } else { 
+            empID = txtEmpID.getText();
+        }
         
-        JLabel imageLabel = new JLabel();
-        ImageIcon imageicon = new ImageIcon(selectedImagePath);
-        imageLabel.setIcon(imageicon);
+        //age
+        if(validateAge(txtAge.getText()) == null){
+            flag = false;
+        } else { 
+            age = validateAge(txtAge.getText());
+        }
+       
+        //position
+         if(txtPosition.getText().isEmpty() || txtPosition.getText().isBlank()){
+            flag = false;
+        } else { 
+            position = txtPosition.getText();
+        }
+         
+        //startDate
+        if(txtStartDate.getText().isEmpty() || txtStartDate.getText().isBlank()){
+            flag = false;
+        } else { 
+            startDate = txtStartDate.getText();
+        }
         
-        if(name.isEmpty() || empID.isEmpty() || age==0 || position.isEmpty() || startDate.isEmpty() ||
-                level.isEmpty() || teamInfo.isEmpty() || gender.isEmpty() || cellNum.isEmpty() || email.isEmpty()){
-            JOptionPane.showMessageDialog(this, "One or more fields are empty");
-        } else {
+        //txtLevel.getText()
+        if(txtLevel.getText().isEmpty() || txtLevel.getText().isBlank()){
+            flag = false;
+        } else { 
+            level = txtLevel.getText();
+        }
         
+         //teamInfo
+        if(txtTeamInfo.getText().isEmpty() || txtTeamInfo.getText().isBlank()){
+            flag = false;
+        } else { 
+            teamInfo = txtTeamInfo.getText();
+        }
+        
+         //gender
+        if(txtGender.getText().isEmpty() || txtGender.getText().isBlank()){
+            flag = false;
+        } else { 
+            gender = txtGender.getText();
+        }
+        
+         //cellnum
+        if(validatePhoneNumber(txtCell.getText()) == null){
+            flag = false;
+        } else { 
+            cellNum = validatePhoneNumber(txtCell.getText());
+        }
+        
+         //email
+        if(txtEmail.getText().isEmpty() || txtEmail.getText().isBlank()){
+            flag = false;
+        } else { 
+            email = txtEmail.getText();
+        }
+        
+        //display success message
+        if(flag == false){
+             JOptionPane.showMessageDialog(this, "Please enter correct employee details");
+        } else{
+            
         ManagerVar mv = history.addEmployeeDetails();
         
         mv.setName(name);
@@ -334,7 +447,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         mv.setGender(gender);
         mv.setCellNum(cellNum);
         mv.setEmail(email);
-        mv.setImage(imageLabel);
+        mv.setImage(lblImage.getIcon());
         
         
         JOptionPane.showMessageDialog(this, "Employee added");
@@ -350,9 +463,38 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtCell.setText("");
         txtEmail.setText("");
         lblImage.setIcon(null);
+        
         }
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
+    private Long validatePhoneNumber(String phoneNumber)
+    {
+        try{
+            if(phoneNumber.length() == 10)
+                return Long.parseLong(phoneNumber);
+            else{
+                JOptionPane.showMessageDialog(this, "Invalid Phone Number!");
+                return null;
+            }
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Invalid Phone Number!");
+            return null;
+        }
+        
+    }
+    
+    private Integer validateAge(String age){
+        try{
+            return Integer.parseInt(age);
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Invalid Age!");
+            return null;
+        }
+    }
+    
     private void txtStartDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStartDateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStartDateActionPerformed

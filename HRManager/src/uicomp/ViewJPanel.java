@@ -321,12 +321,13 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnDelete)
-                    .addComponent(jLabel8)
-                    .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUpdate))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnView)
+                        .addComponent(btnDelete)
+                        .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUpdate)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(336, Short.MAX_VALUE))
@@ -413,14 +414,14 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtStartDate.setText(selectedEmployee.getStartDate());
         txtLevel.setText(selectedEmployee.getLevel());
         txtTeamInfo.setText(selectedEmployee.getTeamInfo());
-        txtCell.setText(selectedEmployee.getCellNum());
+        txtCell.setText(String.valueOf(selectedEmployee.getCellNum()));
         txtEmail.setText(selectedEmployee.getEmail());
         
-        JLabel imageJI = (JLabel)(selectedEmployee.getImage());
+//        JLabel imageJI = (JLabel)(selectedEmployee.getImage());
+//        
+//        ImageIcon imageJLIcon = (ImageIcon) imageJI.getIcon();
         
-        ImageIcon imageJLIcon = (ImageIcon) imageJI.getIcon();
-        
-        lblImage.setIcon(imageJLIcon);
+        lblImage.setIcon(selectedEmployee.getImage());
         
     }//GEN-LAST:event_btnViewActionPerformed
 
@@ -522,7 +523,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             row[9] = mv.getEmail();
             row[10] = mv.getImage();
             
-            tblHistory.getColumn("Image").setCellRenderer(new MyTableCellRenderer());
+            //tblHistory.getColumn("Image").setCellRenderer(new MyTableCellRenderer());
             
             model.addRow(row);
         }
@@ -531,16 +532,16 @@ public class ViewJPanel extends javax.swing.JPanel {
         
     }
     
-    class MyTableCellRenderer implements TableCellRenderer{
-
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-            
-            tblHistory.setRowHeight(60);
-            return (Component) value;
-        }
-    
-    }
+//    class MyTableCellRenderer implements TableCellRenderer{
+//
+//        @Override
+//        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+//            
+//            tblHistory.setRowHeight(60);
+//            return (Component) value;
+//        }
+//    
+//    }
     
     private void filter(String query){
         DefaultTableModel model = (DefaultTableModel) tblHistory.getModel();
