@@ -459,7 +459,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtPosition.setText(selectedEmployee.getPosition());
         txtGender.setText(selectedEmployee.getGender());
         txtStartDate.setText(selectedEmployee.getStartDate());
-        txtLevel.setText(selectedEmployee.getLevel());
+        txtLevel.setText(String.valueOf(selectedEmployee.getLevel()));
         txtTeamInfo.setText(selectedEmployee.getTeamInfo());
         txtCell.setText(String.valueOf(selectedEmployee.getCellNum()));
         txtEmail.setText(selectedEmployee.getEmail());
@@ -478,7 +478,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             int age = Integer.parseInt(txtAge.getText());
             String position = txtPosition.getText();
             String startDate = txtStartDate.getText();
-            String level = txtLevel.getText();
+            int level = Integer.parseInt(txtLevel.getText());
             String teamInfo = txtTeamInfo.getText();
             String gender = txtGender.getText();
             Long cellNum = Long.parseLong(txtCell.getText());
@@ -601,7 +601,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblHistory.getModel();
-        //set row count to 1
+        
         model.setRowCount(0);
 
         for (ManagerVar mv : history.getHistory()) {

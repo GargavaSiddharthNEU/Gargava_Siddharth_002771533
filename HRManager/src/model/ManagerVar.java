@@ -20,7 +20,7 @@ public class ManagerVar {
     private String position;
     private String teamInfo;
     private String startDate;
-    private String level;
+    private int level;
     private Long cellNum;
     private String email;
     private Icon image;
@@ -81,13 +81,14 @@ public class ManagerVar {
         this.startDate = startDate;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
+
 
     public Long getCellNum() {
         return cellNum;
